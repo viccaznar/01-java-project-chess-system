@@ -30,6 +30,14 @@ public class Board {
 		this.columns = columns;
 	}
 	
+	//MÉTODO: Retorna uma peça a partir de ATRIBUTOS SIMPLES de linha e coluna em uma matriz;
+	public Piece piece(int row, int column) {
+		return pieces[row][column];
+	}
 	
+	//SBRECARGA DO MÉTODO: Retorna uma peça a partir dos ATRIBUTOS DO OBJETO do tipo Position, utlizando os GETS;
+	public Piece piece(Position position) {
+		return pieces[position.getRow()][position.getColumn()];
+	}
 	
 }

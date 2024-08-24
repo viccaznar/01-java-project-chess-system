@@ -1,6 +1,6 @@
 package boardgame;
 
-//Classe que determina uma posição no tabuleiro
+//Classe que atribui coordenadas para uma posição no tabuleiro
 
 public class Position {
 
