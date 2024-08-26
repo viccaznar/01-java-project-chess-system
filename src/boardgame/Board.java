@@ -62,12 +62,28 @@ public class Board {
 		piece.position = position;
 	}
 
-	// MÉTODO: para confirmar se a posição dada existe no tabuleiro com atributos de um tipo convencional (int);
+	// MÉTODO: para remover uma peça da posição dada;
+	public Piece removePiece(Position position) {
+		if (!positionExists(position)) {
+			throw new BoardException("Position not on the board");
+		}
+		if (piece(position) == null) {
+			return null;
+		}
+		Piece aux = piece(position);
+		aux.position = null;
+		pieces[position.getRow()][position.getColumn()] = null;
+		return aux;
+	}
+	
+	// MÉTODO: para confirmar se a posição dada existe no tabuleiro com atributos de
+	// um tipo convencional (int);
 	private boolean positionExists(int row, int column) {
 		return row >= 0 && row < rows && column >= 0 && column < columns;
 	}
-	
-	// MÉTODO: para confirmar se a posição dada existe no tabuleiro com atributos de objeto (Position);
+
+	// MÉTODO: para confirmar se a posição dada existe no tabuleiro com atributos de
+	// objeto (Position);
 	public boolean positionExists(Position position) {
 		return positionExists(position.getRow(), position.getColumn());
 	}
